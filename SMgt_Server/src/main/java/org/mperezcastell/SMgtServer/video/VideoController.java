@@ -29,10 +29,7 @@ import org.mperezcastell.SMgtServer.video.repository.PatientRepository;
 import org.mperezcastell.SMgtServer.video.repository.Video;
 import org.mperezcastell.SMgtServer.video.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -68,7 +65,7 @@ public class VideoController {
 		Collection<Patient> pac = (Collection<Patient>) patients.findAll();
 		String patientsList = "";
 		for (Patient patient : pac) {
-			patientsList = patientsList + patient.getUser();
+			patientsList = patientsList + patient.getPatient();
 		}
 		return principal.getName() + authorities + client + patientsList;
 	}

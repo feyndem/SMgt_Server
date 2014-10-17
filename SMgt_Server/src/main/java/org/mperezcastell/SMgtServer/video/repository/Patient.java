@@ -17,12 +17,12 @@ public class Patient {
 		this.patient = patient;
 	}
 		
-	public String getUser() {
+	public String getPatient() {
 		return patient;
 	}
 
-	public void setUser(String user) {
-		this.patient = user;
+	public void setPatient(String patient) {
+		this.patient = patient;
 	}
 
 }

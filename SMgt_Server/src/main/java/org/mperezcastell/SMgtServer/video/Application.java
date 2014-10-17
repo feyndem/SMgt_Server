@@ -9,7 +9,6 @@ import javax.sql.DataSource;
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
 import org.mperezcastell.SMgtServer.video.auth.OAuth2SecurityConfiguration;
-import org.mperezcastell.SMgtServer.video.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -39,7 +38,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableAutoConfiguration
 //Tell Spring to automatically create a JPA implementation of our
 //VideoRepository
-@EnableJpaRepositories(basePackageClasses = VideoRepository.class)
+@EnableJpaRepositories
 //We use the @Import annotation to include our OAuth2SecurityConfiguration
 //as part of this configuration so that we can have security and oauth
 //setup by Spring
