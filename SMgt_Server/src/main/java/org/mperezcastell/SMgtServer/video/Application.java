@@ -55,7 +55,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 // Any class in this package that is annotated with @Controller is going to be
 // automatically discovered and connected to the DispatcherServlet.
 @ComponentScan
-// @PropertySource("classpath:/resources/datasource.properties")
 @EnableTransactionManagement
 public class Application extends RepositoryRestMvcConfiguration {
 
@@ -118,7 +117,7 @@ public class Application extends RepositoryRestMvcConfiguration {
   
     Properties additionalProperties() {
        Properties properties = new Properties();
-       properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+       properties.setProperty("hibernate.hbm2ddl.auto", "update");
        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
        return properties;
     }

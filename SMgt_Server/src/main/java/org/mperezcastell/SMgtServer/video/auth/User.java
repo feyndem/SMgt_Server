@@ -13,6 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@SuppressWarnings("serial")
 public class User implements UserDetails {
 
 	public static UserDetails create(String username, String password,

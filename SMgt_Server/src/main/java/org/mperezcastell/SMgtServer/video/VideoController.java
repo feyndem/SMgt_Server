@@ -24,6 +24,8 @@ import java.util.Collections;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.mperezcastell.SMgtServer.video.repository.Patient;
+import org.mperezcastell.SMgtServer.video.repository.PatientRepository;
 import org.mperezcastell.SMgtServer.video.repository.Video;
 import org.mperezcastell.SMgtServer.video.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,12 +59,18 @@ public class VideoController {
 	public @ResponseBody Video addVideo (@RequestBody Video v) {
 		return videos.save(v);		
 	}
-	
+	@Autowired
+	PatientRepository patients;
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public @ResponseBody String getClient (Principal principal, OAuth2Authentication auth) {
 		Collection<GrantedAuthority> authorities = ((OAuth2Authentication) auth).getAuthorities();
 		String client = ((OAuth2Authentication) auth).getOAuth2Request().getClientId();
-		return principal.getName() + authorities + client;
+		Collection<Patient> pac = (Collection<Patient>) patients.findAll();
+		String patientsList = "";
+		for (Patient patient : pac) {
+			patientsList = patientsList + patient.getUser();
+		}
+		return principal.getName() + authorities + client + patientsList;
 	}
 	
 	@RequestMapping(value = "/video/{id}", method = RequestMethod.GET)
