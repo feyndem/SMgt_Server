@@ -32,6 +32,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 //Tell Spring to automatically inject any dependencies that are marked in
 //our classes with @Autowired
@@ -178,6 +180,18 @@ public class Application extends RepositoryRestMvcConfiguration {
 		    
 			}
         };
+    }
+    
+	// We are overriding the bean that RepositoryRestMvcConfiguration
+    // is using to convert our objects into JSON so that we can control
+    // the format. The Spring dependency injection will inject our instance
+    // of ObjectMapper in all of the spring data rest classes that rely
+    // on the ObjectMapper. This is an example of how Spring dependency
+    // injection allows us to easily configure dependencies in code that
+    // we don't have easy control over otherwise.
+    @Override
+    public ObjectMapper halObjectMapper(){
+    	return new ResourcesMapper();
     }
 	
 }

@@ -18,12 +18,14 @@
 
 package org.mperezcastell.SMgtServer.video;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.mperezcastell.SMgtServer.video.repository.Doctor;
 import org.mperezcastell.SMgtServer.video.repository.DoctorRepository;
+import org.mperezcastell.SMgtServer.video.repository.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,10 +40,10 @@ public class DoctorController {
 	private DoctorRepository doctors;
 	
 	@RequestMapping(value = "/doctors/{doctorid}/patients", method = RequestMethod.GET)
-	public @ResponseBody Doctor getPatientsList (@PathVariable String doctorid, HttpServletResponse response) {
+	public @ResponseBody Collection<Patient> getPatientsList (@PathVariable String doctorid, HttpServletResponse response) {
 		List<Doctor> doctorCollection = doctors.findByDoctor(doctorid);
 		Doctor doctor = doctorCollection.get(0);
-		return doctor;				
+		return doctor.getPatients();				
 //		if (doctorCollection != null) {
 //			Collection<Patient> patientsList = null;
 //			for (Doctor doctor : doctorCollection) {
