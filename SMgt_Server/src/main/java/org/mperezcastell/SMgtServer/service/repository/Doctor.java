@@ -12,7 +12,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Doctor {
 
 	@Id
-	private String doctor;
+	private String id;
+	
+	private String firstName;
+	private String lastName;
 	
 	@OneToMany(mappedBy = "doctor")
 	@JsonManagedReference
@@ -21,17 +24,35 @@ public class Doctor {
 	public Doctor() {
 	}
 
-	public Doctor(String doctor) {
+	public Doctor(String id, String firstName, String lastName) {
 		super();
-		this.doctor = doctor;
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 		
-	public String getDoctor() {
-		return doctor;
+	public String getId() {
+		return id;
 	}
 
-	public void setDoctor(String doctor) {
-		this.doctor = doctor;
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	public Set<Patient> getPatients() {

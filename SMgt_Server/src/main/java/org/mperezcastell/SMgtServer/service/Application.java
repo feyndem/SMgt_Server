@@ -85,7 +85,7 @@ public class Application extends RepositoryRestMvcConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[] { "org.mperezcastell.SMgtServer.video" });
+		em.setPackagesToScan(new String[] { "org.mperezcastell.SMgtServer.service" });
 		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
@@ -118,7 +118,7 @@ public class Application extends RepositoryRestMvcConfiguration {
   
     Properties additionalProperties() {
        Properties properties = new Properties();
-       properties.setProperty("hibernate.hbm2ddl.auto", "update");
+       properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
        return properties;
     }

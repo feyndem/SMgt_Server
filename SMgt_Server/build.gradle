@@ -67,7 +67,6 @@ dependencies {
     compile("org.apache.tomcat:tomcat-dbcp:7.0.55")
     compile(":mobilecloud.handin-1.0.0")
     
-    testCompile("junit:junit")
 }
 
 task wrapper(type: Wrapper) {

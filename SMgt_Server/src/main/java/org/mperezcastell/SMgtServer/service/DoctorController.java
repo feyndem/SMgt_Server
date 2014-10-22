@@ -41,19 +41,9 @@ public class DoctorController {
 	
 	@RequestMapping(value = "/doctors/{doctorid}/patients", method = RequestMethod.GET)
 	public @ResponseBody Collection<Patient> getPatientsList (@PathVariable String doctorid, HttpServletResponse response) {
-		List<Doctor> doctorCollection = doctors.findByDoctor(doctorid);
+		List<Doctor> doctorCollection = doctors.findById(doctorid);
 		Doctor doctor = doctorCollection.get(0);
 		return doctor.getPatients();				
-//		if (doctorCollection != null) {
-//			Collection<Patient> patientsList = null;
-//			for (Doctor doctor : doctorCollection) {
-//				patientsList =  doctor.getPatients();
-//			}			
-//			return patientsList;
-//		} else {
-//			response.setStatus(HttpServletResponse.SC_NOT_FOUND);	
-//			return null;
-//		}
 	}
 	
 }

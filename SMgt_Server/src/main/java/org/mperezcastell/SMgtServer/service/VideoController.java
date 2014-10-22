@@ -24,7 +24,6 @@ import java.util.Collections;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.mperezcastell.SMgtServer.service.repository.Patient;
 import org.mperezcastell.SMgtServer.service.repository.PatientRepository;
 import org.mperezcastell.SMgtServer.service.repository.Video;
 import org.mperezcastell.SMgtServer.service.repository.VideoRepository;
@@ -62,12 +61,7 @@ public class VideoController {
 	public @ResponseBody String getClient (Principal principal, OAuth2Authentication auth) {
 		Collection<GrantedAuthority> authorities = ((OAuth2Authentication) auth).getAuthorities();
 		String client = ((OAuth2Authentication) auth).getOAuth2Request().getClientId();
-		Collection<Patient> pac = (Collection<Patient>) patients.findAll();
-		String patientsList = "";
-		for (Patient patient : pac) {
-			patientsList = patientsList + patient.getPatient();
-		}
-		return principal.getName() + authorities + client + patientsList;
+		return principal.getName() + authorities + client;
 	}
 	
 	@RequestMapping(value = "/video/{id}", method = RequestMethod.GET)

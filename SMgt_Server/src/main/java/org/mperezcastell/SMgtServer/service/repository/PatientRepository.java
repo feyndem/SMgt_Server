@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PatientRepository extends CrudRepository<Patient, Long>{
 
-	public Collection<Patient> findByPatient(String patient);
+	public Collection<Patient> findByRecordNumber(String recordNumber);
 		
 }
