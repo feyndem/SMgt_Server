@@ -1,8 +1,8 @@
-package org.mperezcastell.SMgtServer.video.client;
+package org.mperezcastell.SMgtServer.service.client;
 
 import java.util.Collection;
 
-import org.mperezcastell.SMgtServer.video.repository.Video;
+import org.mperezcastell.SMgtServer.service.repository.Video;
 
 import retrofit.http.Body;
 import retrofit.http.GET;

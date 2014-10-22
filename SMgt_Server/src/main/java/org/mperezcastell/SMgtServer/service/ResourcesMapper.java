@@ -1,4 +1,4 @@
-package org.mperezcastell.SMgtServer.video;
+package org.mperezcastell.SMgtServer.service;
 
 import java.io.IOException;
 

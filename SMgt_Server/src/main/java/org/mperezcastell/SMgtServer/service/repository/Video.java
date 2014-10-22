@@ -1,4 +1,4 @@
-package org.mperezcastell.SMgtServer.video.repository;
+package org.mperezcastell.SMgtServer.service.repository;
 
 
 

@@ -4,7 +4,7 @@
  **
  ** 
  */
-package org.mperezcastell.SMgtServer.video.auth;
+package org.mperezcastell.SMgtServer.service.auth;
 
 import java.util.Collection;
 import java.util.Collections;

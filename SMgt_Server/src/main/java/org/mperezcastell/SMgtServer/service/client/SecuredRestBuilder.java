@@ -4,7 +4,7 @@
  **
  ** 
  */
-package org.mperezcastell.SMgtServer.video.client;
+package org.mperezcastell.SMgtServer.service.client;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.mperezcastell.SMgtServer.video;
+package org.mperezcastell.SMgtServer.service;
 
 import java.io.File;
 import java.util.Properties;
@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
-import org.mperezcastell.SMgtServer.video.auth.OAuth2SecurityConfiguration;
+import org.mperezcastell.SMgtServer.service.auth.OAuth2SecurityConfiguration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

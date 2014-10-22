@@ -4,7 +4,7 @@
  **
  ** 
  */
-package org.mperezcastell.SMgtServer.video.client;
+package org.mperezcastell.SMgtServer.service.client;
 
 /**
  * A special class made to specify exceptions that are thrown by our

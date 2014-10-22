@@ -4,7 +4,7 @@
  **
  ** 
  */
-package org.mperezcastell.SMgtServer.video.auth;
+package org.mperezcastell.SMgtServer.service.auth;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

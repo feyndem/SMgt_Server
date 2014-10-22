@@ -16,16 +16,16 @@
  * 
  */
 
-package org.mperezcastell.SMgtServer.video;
+package org.mperezcastell.SMgtServer.service;
 
 import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.mperezcastell.SMgtServer.video.repository.Doctor;
-import org.mperezcastell.SMgtServer.video.repository.DoctorRepository;
-import org.mperezcastell.SMgtServer.video.repository.Patient;
+import org.mperezcastell.SMgtServer.service.repository.Doctor;
+import org.mperezcastell.SMgtServer.service.repository.DoctorRepository;
+import org.mperezcastell.SMgtServer.service.repository.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

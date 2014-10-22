@@ -16,7 +16,7 @@
  * 
  */
 
-package org.mperezcastell.SMgtServer.video;
+package org.mperezcastell.SMgtServer.service;
 
 import java.security.Principal;
 import java.util.Collection;
@@ -24,10 +24,10 @@ import java.util.Collections;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.mperezcastell.SMgtServer.video.repository.Patient;
-import org.mperezcastell.SMgtServer.video.repository.PatientRepository;
-import org.mperezcastell.SMgtServer.video.repository.Video;
-import org.mperezcastell.SMgtServer.video.repository.VideoRepository;
+import org.mperezcastell.SMgtServer.service.repository.Patient;
+import org.mperezcastell.SMgtServer.service.repository.PatientRepository;
+import org.mperezcastell.SMgtServer.service.repository.Video;
+import org.mperezcastell.SMgtServer.service.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
