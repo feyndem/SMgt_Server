@@ -1,11 +1,14 @@
 package org.mperezcastell.SMgtServer.service.repository;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -22,6 +25,9 @@ public class Patient {
 	@JoinColumn(name = "doctor")
 	@JsonBackReference
 	private Doctor doctor;
+	
+	@ManyToMany
+	private Set<Medication> medications;
 	
 	public Patient() {
 	}
@@ -73,5 +79,14 @@ public class Patient {
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
+	
+	public Set<Medication> getMedications() {
+		return medications;
+	}
+	
+	public void setMedications(Set<Medication> medications) {
+		this.medications = medications;
+	}
+	
 
 }
