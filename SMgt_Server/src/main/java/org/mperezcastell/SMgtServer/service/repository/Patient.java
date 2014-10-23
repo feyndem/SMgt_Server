@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Patient {
@@ -28,6 +30,14 @@ public class Patient {
 	
 	@ManyToMany
 	private Set<Medication> medications;
+	
+	@OneToMany(mappedBy = "patient")
+	@JsonManagedReference
+	private Set<MedicineIngestion> medsCheckins;
+	
+	@OneToMany(mappedBy = "patient")
+	@JsonManagedReference
+	private Set<Checkins> checkins;
 	
 	public Patient() {
 	}
@@ -86,6 +96,14 @@ public class Patient {
 	
 	public void setMedications(Set<Medication> medications) {
 		this.medications = medications;
+	}
+	
+	public Set<MedicineIngestion> getMedsCheckins() {
+		return medsCheckins;
+	}
+	
+	public void setMedsCheckins(Set<MedicineIngestion> medsCheckins) {
+		this.medsCheckins = medsCheckins;
 	}
 	
 
